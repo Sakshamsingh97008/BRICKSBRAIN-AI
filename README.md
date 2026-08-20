@@ -2,7 +2,6 @@
 
 > AI-powered full-stack real estate platform for India — React.js frontend, Node.js backend, Python ML service, MongoDB, Three.js 3D, Google Maps API, Razorpay payments.
 
-> Formerly PropIQ, now BRICKSBRAIN-AI.
 
 ---
 
