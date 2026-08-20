@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom CSS Variables ── */
+:root {
+  --accent:       #16a34a;
+  --accent-hover: #15803d;
+  --accent-light: #dcfce7;
+  --accent-xlight:#f0fdf4;
+  --blue:         #2563eb;
+  --blue-light:   #dbeafe;
+  --amber:        #d97706;
+  --amber-light:  #fef3c7;
+  --red:          #dc2626;
+  --red-light:    #fee2e2;
+  --shadow:       0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:    0 4px 16px rgba(0,0,0,.08);
+  --shadow-lg:    0 10px 40px rgba(0,0,0,.12);
+  --radius:       10px;
+  --radius-lg:    14px;
+  --radius-xl:    20px;
+}
+
+/* ── Base ── */
+* { box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
+.dark body { background: #0f172a; color: #f1f5f9; }
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+.dark ::-webkit-scrollbar-track { background: #1e293b; }
+.dark ::-webkit-scrollbar-thumb { background: #475569; }
+
+/* ── Range input accent ── */
+input[type=range] { accent-color: var(--accent); width: 100%; cursor: pointer; }
+
+/* ── Animations ── */
+@keyframes fadeIn   { from { opacity:0; transform:translateY(6px) }  to { opacity:1; transform:translateY(0) } }
+@keyframes slideUp  { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+@keyframes bounceDot{ 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-8px)} }
+@keyframes pulse    { 0%,100%{opacity:1} 50%{opacity:.4} }
+@keyframes spin     { to{transform:rotate(360deg)} }
+
+.animate-fade-in  { animation: fadeIn   0.2s ease both; }
+.animate-slide-up { animation: slideUp  0.25s ease both; }
+.animate-spin     { animation: spin     0.8s linear infinite; }
+.animate-pulse    { animation: pulse    1.5s ease infinite; }
+
+/* ── Utility ── */
+.text-balance { text-wrap: balance; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* ── Three.js canvas ── */
+canvas { border-radius: var(--radius-lg); display: block; }
+
+/* ── Custom score bar transition ── */
+.score-bar { transition: width 0.7s cubic-bezier(.4,0,.2,1); }
+
+/* ── Toast ── */
+.toast-enter { animation: slideUp 0.3s ease; }
